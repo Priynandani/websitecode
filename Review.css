@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    background: orange;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 30px;
+}
+
+nav .icon {
+    font-size: 35px;
+    font-weight: 800px;
+    color: black;
+    cursor: pointer;
+}
+
+nav ol {
+    display: flex;
+    list-style: none;
+    margin-bottom: auto 0;
+}
+
+nav ol li {
+    margin: 0 2px;
+}
+
+nav ol li a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+}
+
+nav ol li:hover a {
+    background: white;
+    color: gold;
+    border: 10px;
+    border-radius: 10px;
+}
+
+nav .search_box {
+    display: flex;
+    margin-bottom: auto 0;
+    height: 35px;
+    line-height: 35px;
+}
+
+nav .search_box input {
+    border: none;
+    outline: none;
+    background: #fff;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 20px;
+    width: 350px;
+}
+
+nav .search_box span {
+    color: green;
+    font-size: 20px;
+    background: #fff;
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+nav .search_box span:hover {
+    color: #fff;
+}
+
+nav .search_box span:hover {
+    color: #fff;
+}
+
+nav .search_box span::after {
+    height: 100%;
+    width: 0%;
+    content: '';
+    background: gold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+nav .search_box span:hover::after {
+    width: 100%;
+}
+
+nav .bar {
+    position: relative;
+    margin: auto;
+    display: none;
+}
+
+nav .bar span {
+    position: absolute;
+    color: white;
+    font: 35px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    display: none;
+}
+
+@media screen and (max-width: 1250px) {
+    nav {
+        display: block;
+        padding: 0;
+    }
+    nav .icon {
+        display: inline-block;
+        padding: 15px 30px;
+    }
+    nav .search_box {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    nav .search_box input {
+        width: 90%;
+    }
+    nav ol {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        height: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+    nav ol li {
+        text-align: center;
+        transition: 0.3s 0.1s all;
+        opacity: 0;
+    }
+    nav ol li a {
+        color: #000;
+        font-size: 28px;
+        padding: 25px;
+        display: block;
+    }
+    nav ol li:nth-child(1) {
+        transform: translateX(-150px);
+    }
+    nav ol li:nth-child(2) {
+        transform: translateX(-200px);
+    }
+    nav ol li:nth-child(3) {
+        transform: translateX(-250px);
+    }
+    nav ol li:nth-child(4) {
+        transform: translateX(-300px);
+    }
+    nav ol li:nth-child(5) {
+        transform: translateX(-350px);
+    }
+    nav .bar {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 80px;
+        cursor: pointer;
+    }
+    nav .bar #times {
+        display: none;
+    }
+    #check:checked~nav .bar #times {
+        display: block;
+    }
+    #check:checked~nav .bar #bar {
+        display: none;
+    }
+    #check:checked~nav ol {
+        visibility: visible;
+        height: 465px;
+    }
+    #check:checked~nav ol li:nth-child(1),
+    #check:checked~nav ol li:nth-child(2),
+    #check:checked~nav ol li:nth-child(3),
+    #check:checked~nav ol li:nth-child(4),
+    #check:checked~nav ol li:nth-child(5) {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+body h1 {
+    color: gold;
+    font-size: 2.5rem;
+    transition: 1s;
+}
+
+body h1:hover {
+    color: orange;
+}
+
+.review {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.review .box {
+    border-radius: 0.10rem;
+    border: 0.5rem solid gold;
+    padding: 1rem;
+    flex: 1 1 30rem;
+    transition: 3s;
+}
+
+.review .box:hover {
+    background: gold;
+    color: white;
+    transform: translateY(1.1);
+}
+
+.review .box .student {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review .box .student .student-name {
+    display: flex;
+    align-items: center;
+}
+
+.review .box .student i {
+    font-size: 6rem;
+    color: orange;
+    opacity: .5;
+}
+
+.review .box .student i:hover {
+    color: white;
+}
+
+.review .box .student .student-name img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 7rem;
+    width: 7rem;
+    margin-right: 1.5rem;
+}
+
+.review .box .student .student-name h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.review .box .student .student-name span {
+    font-size: 1.5rem;
+    color: orange;
+}
+
+.review .box .student .student-name h3:hover {
+    color: white;
+}
+
+.review .box .student .student-name span:hover {
+    color: white;
+}
+
+.review .box .text {
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    color: #666;
+}
+
+.review .box .icon {
+    font-size: 2.5rem;
+    color: orange;
+}
+
+.review .box .text:hover {
+    color: white;
+}
+
+.review .box .icon:hover {
+    color: white;
+}
+
+.footer .box-container {
+    justify-content: flex-end;
+    text-align: center;
+    background: rgb(151, 150, 150);
+    flex-direction: wrap;
+    gap: -0rem;
+}
+
+.footer .box-container .box {
+    flex: 1 1 20rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 1.5rem;
+    color: orange;
+    padding: .7rem 0;
+}
+
+.footer .box-container .box p {
+    font-size: 1.5rem;
+    columns: white;
+    padding: .5rem 0;
+}
+
+.footer .box-container .box a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: 1s;
+    padding: .10rem 0;
+}
+
+.footer .box-container .box a:hover {
+    color: gold;
+    transform: scale(1.1);
+}
+
+.footer .box-container .box p i {
+    padding-right: .4rem;
+    color: yellow;
+    transition: 1s;
+}
+
+.footer .box-container .box p i:hover {
+    color: gold;
+    transform: scale(.9);
+}
+
+.footer .box-container .box h4 {
+    text-align: center;
+    border-radius: 2rem;
+    border: 3px solid gold;
+    font-size: 1.5rem;
+    background: rgb(247, 223, 90);
+    color: rgb(108, 107, 107);
+    transition: 1s;
+}
+
+.footer .box-container .box h4:hover {
+    background: white;
+    columns: rgb(108, 107, 107);
+    transform: scale(.8);
+}
+
+.footer .credit {
+    font-size: 2rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+    color: #666;
+}
+
+.footer .credit span {
+    color: gold;
+}
